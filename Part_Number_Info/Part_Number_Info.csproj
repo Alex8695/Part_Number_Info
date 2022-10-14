@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>bc454cd4-923d-4a3c-83e1-89e7675973a8</ProjectGuid>
+    <ProjectGuid>{BC454CD4-923D-4A3C-83E1-89E7675973A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Part_Number_Info</RootNamespace>
@@ -30,24 +30,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utility_Text">
+      <HintPath>..\..\..\utility\utility_text\Utility_Text\bin\Release\Utility_Text.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Control\Code_Modification_Color.cs" />
+    <Compile Include="Control\Input_Format.cs" />
+    <Compile Include="Control\PartNumberParse\ParseAbstract.cs" />
+    <Compile Include="Control\PartNumberParse\ParseStandard.cs" />
+    <Compile Include="Control\PartNumberParse\ParseSupply.cs" />
+    <Compile Include="Control\PartNumberRegex\RegexPartStandard.cs" />
+    <Compile Include="Control\PartNumberRegex\RegexPartSupply.cs" />
+    <Compile Include="Control\Part_Number_Magic.cs" />
+    <Compile Include="Model\PartNumberGrouping.cs" />
+    <Compile Include="Model\PartNumberInfo.cs" />
+    <Compile Include="Model\Group_Main_Type.cs" />
+    <Compile Include="Model\Group_Modification_Type.cs" />
+    <Compile Include="Model\Group_Sub_Type.cs" />
+    <Compile Include="Model\Part_Group_Type.cs" />
+    <Compile Include="Part_Number.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +71,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
